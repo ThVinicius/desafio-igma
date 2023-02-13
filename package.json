@@ -1,0 +1,35 @@
+{
+  "name": "desafio-igma",
+  "version": "1.0.0",
+  "description": "Desafio tecnico do processo seletivo da IGMA",
+  "main": "index.js",
+  "scripts": {
+    "build": "prisma migrate deploy && prisma db seed && tsc",
+    "start": "node ./dist/src/server.js",
+    "dev": "nodemon ./src/server.ts",
+    "test": "jest --no-cache -i --verbose"
+  },
+  "author": "Vinicius Pacheco dos Santos",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "joi": "^17.7.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.4.0",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.4.2",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.10.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
