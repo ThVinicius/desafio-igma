@@ -27,4 +27,8 @@ export default class CustomerService {
 
     return customer!
   }
+
+  getRepository() {
+    return this.repository
+  }
 }

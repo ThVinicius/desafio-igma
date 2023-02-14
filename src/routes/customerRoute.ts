@@ -23,7 +23,7 @@ export default class CustomerRoute {
   routes(): void {
     this.router.post(
       '/api/customers',
-      this.schemaValidator.use(this.schema.create),
+      this.schemaValidator.use(this.schema.getCreate()),
       this.cpfValidator.use,
       this.controller.create
     )
@@ -31,14 +31,14 @@ export default class CustomerRoute {
     const isQuery = true
     this.router.get(
       '/api/customers',
-      this.schemaValidator.use(this.schema.pagination),
+      this.schemaValidator.use(this.schema.getPagination(), { isQuery }),
       this.controller.findAllWithPagination
     )
 
     const isParams = true
     this.router.get(
       '/api/customers/:cpf',
-      this.schemaValidator.use(this.schema.findByCpf, { isParams }),
+      this.schemaValidator.use(this.schema.getFindByCpf(), { isParams }),
       this.controller.findByCpf
     )
   }

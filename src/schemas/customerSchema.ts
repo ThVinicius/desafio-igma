@@ -4,10 +4,10 @@ import { ICustomer } from '../types/customerType'
 import { IFindById, IPagination } from '../types/joiType'
 
 export class CustomerSchema {
-  joi: typeof JoiImport
-  create: JoiImport.ObjectSchema<ICustomer>
-  findByCpf: JoiImport.ObjectSchema<IFindById>
-  pagination: JoiImport.ObjectSchema<IPagination>
+  private joi: typeof JoiImport
+  private create: JoiImport.ObjectSchema<ICustomer>
+  private findByCpf: JoiImport.ObjectSchema<IFindById>
+  private pagination: JoiImport.ObjectSchema<IPagination>
 
   constructor() {
     this.joi = JoiImport.extend(DateExtension)
@@ -32,5 +32,17 @@ export class CustomerSchema {
       page: this.joi.number().greater(0),
       take: this.joi.number().greater(0)
     })
+  }
+
+  getCreate() {
+    return this.create
+  }
+
+  getFindByCpf() {
+    return this.findByCpf
+  }
+
+  getPagination() {
+    return this.pagination
   }
 }
