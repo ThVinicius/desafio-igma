@@ -12,6 +12,7 @@
   "author": "Vinicius Pacheco dos Santos",
   "license": "ISC",
   "dependencies": {
+    "@joi/date": "^2.1.0",
     "@prisma/client": "^4.10.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
