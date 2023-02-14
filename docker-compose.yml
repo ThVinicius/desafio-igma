@@ -1,0 +1,24 @@
+services:
+  db_desafio_igma:
+    container_name: db_desafio_igma
+    image: postgres
+    restart: always
+    ports:
+      - 6022:5432
+    env_file:
+      - .env.development
+    volumes:
+      - pg:/var/lib/postgresql/data
+
+  node_desafio_igma:
+    container_name: node_desafio_igma
+    build: .
+    ports:
+      - 4000:4000
+    depends_on:
+      - db_desafio_igma
+    env_file:
+      - .env.development
+
+volumes:
+  pg:
