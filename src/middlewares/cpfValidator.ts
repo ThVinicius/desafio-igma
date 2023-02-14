@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
+import { Cpf } from '../utils/cpf'
 
 export class CpfValidator {
   use(req: Request, res: Response, next: NextFunction) {
@@ -27,10 +28,7 @@ export class CpfValidator {
 
     if (secondDigitValidation) return res.status(422).send('CPF inválido')
 
-    const cpfWithPunctuation = cpfWithoutPunctuation.replace(
-      /(\d{3})(\d{3})(\d{3})(\d{2})/,
-      '$1.$2.$3-$4'
-    )
+    const cpfWithPunctuation = new Cpf(cpfWithoutPunctuation).withPunctuation()
 
     req.body.cpf = cpfWithPunctuation
 
