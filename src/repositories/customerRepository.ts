@@ -7,6 +7,19 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     return await prisma.customer.create({ data })
   }
 
+  async findAllWithPagination(
+    skip: number,
+    take: number
+  ): Promise<ICustomerWithId[]> {
+    return await prisma.customer.findMany({
+      take,
+      skip,
+      orderBy: {
+        id: 'asc'
+      }
+    })
+  }
+
   async findByCpf(cpf: string): Promise<ICustomerWithId | null> {
     return await prisma.customer.findUnique({ where: { cpf } })
   }

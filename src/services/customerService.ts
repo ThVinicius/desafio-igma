@@ -13,6 +13,13 @@ export default class CustomerService {
     return await this.repository.create(customer)
   }
 
+  async findAllWithPagination(
+    skip: number,
+    take: number
+  ): Promise<ICustomerWithId[]> {
+    return await this.repository.findAllWithPagination(skip, take)
+  }
+
   async findByCpf(cpf: string): Promise<ICustomerWithId> {
     const customer = await this.repository.findByCpf(cpf)
 

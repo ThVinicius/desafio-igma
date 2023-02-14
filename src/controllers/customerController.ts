@@ -18,6 +18,19 @@ export default class CustomerController {
     return res.status(201).send(customer)
   }
 
+  async findAllWithPagination(req: Request, res: Response) {
+    const page = Number(req.query.page) || 1
+    const take = Number(req.query.take) || 10
+    const skip = (page - 1) * take
+
+    const customers = await CustomerController.service.findAllWithPagination(
+      skip,
+      take
+    )
+
+    return res.status(200).send(customers)
+  }
+
   async findByCpf(req: Request, res: Response) {
     const cpf = new Cpf(req.params.cpf).withPunctuation()
 

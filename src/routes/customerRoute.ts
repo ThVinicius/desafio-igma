@@ -28,6 +28,13 @@ export default class CustomerRoute {
       this.controller.create
     )
 
+    const isQuery = true
+    this.router.get(
+      '/api/customers',
+      this.schemaValidator.use(this.schema.pagination),
+      this.controller.findAllWithPagination
+    )
+
     const isParams = true
     this.router.get(
       '/api/customers/:cpf',
