@@ -3,6 +3,7 @@ import { ObjectSchema } from 'joi'
 
 interface IRequest {
   isParams?: boolean
+  isQuery?: boolean
 }
 
 export class SchemaValidator {
@@ -10,7 +11,8 @@ export class SchemaValidator {
     let payload
 
     return (req: Request, res: Response, next: NextFunction) => {
-      if (request?.isParams) payload = req.params
+      if (request?.isQuery) payload = req.query
+      else if (request?.isParams) payload = req.params
       else payload = req.body
 
       const { error } = schema.validate(payload, { abortEarly: false })
