@@ -27,5 +27,12 @@ export default class CustomerRoute {
       this.cpfValidator.use,
       this.controller.create
     )
+
+    const isParams = true
+    this.router.get(
+      '/api/customers/:cpf',
+      this.schemaValidator.use(this.schema.findByCpf, { isParams }),
+      this.controller.findByCpf
+    )
   }
 }
