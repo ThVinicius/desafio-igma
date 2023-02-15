@@ -20,6 +20,7 @@
 - [Descrição](#description)
 - [Deploy](#deploy)
 - [Modelagem do banco de dados](#database)
+- [Links uteis para testar a aplicação](#utils)
 - [Documentação da API](#api-reference)
   - [Rota dos clientes](#customers-routes)
     - [Cadastrar um cliente](#post-customers)
@@ -49,7 +50,7 @@ Desafio técnico do processo seletivo da IGMA.
 
 # Deploy
 
-- [Link Deploy](https://desafio-igma.onrender.com/)
+- [Link Deploy](https://desafio-igma.fly.dev/)
 
 <div id='database'/>
 
@@ -67,6 +68,16 @@ Desafio técnico do processo seletivo da IGMA.
   - name: not null
   - cpf: not null, unique, maxLength(14)
   - dateOfBirth: maxLength(10)
+
+#
+
+<div id='utils'/>
+
+# Links uteis para testar a aplicação
+
+- [Gerador de CPF](https://www.4devs.com.br/gerador_de_cpf)
+
+#
 
 <div id='api-reference'/>
 
