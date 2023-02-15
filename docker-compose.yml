@@ -12,7 +12,9 @@ services:
 
   node_desafio_igma:
     container_name: node_desafio_igma
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.development
     ports:
       - 4000:4000
     depends_on:
