@@ -50,7 +50,7 @@ Desafio técnico do processo seletivo da IGMA.
 
 # Deploy
 
-- [Link Deploy](https://desafio-igma.fly.dev/)
+- [Link Deploy](https://desafio-igma.onrender.com)
 
 <div id='database'/>
 
