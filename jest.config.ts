@@ -10,6 +10,7 @@ const config: Config = {
     '<rootDir>/src/server.ts',
     '<rootDir>/src/app.ts',
     '<rootDir>/src/databases',
+    '<rootDir>/src/errors',
     '<rootDir>/src/controllers',
     '<rootDir>/src/middlewares',
     '<rootDir>/src/repositories',
