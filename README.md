@@ -140,10 +140,10 @@ GET /api/customers
 
 <h3>Mandar pela query da requisição:</h3>
 
-| Parâmetro | Tipo     | Descrição                        |
-| :-------- | :------- | :------------------------------- |
-| `page`    | `number` | **Obrigatório**, **maior que 0** |
-| `take`    | `number` | **Obrigatório**, **maior que 0** |
+| Parâmetro | Tipo     | Descrição       |
+| :-------- | :------- | :-------------- |
+| `page`    | `number` | **maior que 0** |
+| `take`    | `number` | **maior que 0** |
 
 Obs: por default page é igual a 1 e take é igual a 10. Esses valores serão utilizados caso não passe uma ou as duas querys.
 
