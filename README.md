@@ -238,7 +238,7 @@ Instale as dependências
 npm i
 ```
 
-Modifique o arquivo `.env` no diretório raiz do projeto com as seguintes variaveis:
+Modifique o arquivo `.env` no diretório raiz do projeto com suas credências do postgreSQL:
 
 - `DATABASE_URL=postgres://{user}:{password}@localhost:5432/desafio_igma`
 
@@ -253,6 +253,8 @@ Inice o projeto
 ```bash
 npm run dev
 ```
+
+A aplicação ficará disponivel na porta 4000 (http://localhost:4000)
 
 <div id='run-docker'/>
 
@@ -269,6 +271,8 @@ Faça o build do container
 ```bash
   docker-compose up --build -d
 ```
+
+A aplicação ficará disponivel na porta 4000 (http://localhost:4000)
 
 Caso queira parar o container basta utilizar o comando
 
@@ -288,9 +292,9 @@ Instale as dependências
 npm i
 ```
 
-Modifique o arquivo `.env` no diretório raiz do projeto com as seguintes variaveis:
+Modifique o arquivo `.env.test` no diretório raiz do projeto com suas credências do postgreSQL:
 
-- `DATABASE_URL=postgres://{user}:{password}@localhost:5432/desafio_igma`
+- `DATABASE_URL=postgres://{user}:{password}@localhost:5432/desafio_igma_test`
 
 Rode os testes com o comando:
 
@@ -303,19 +307,21 @@ npm run test
 Inicie o docker-compose
 
 ```bash
-docker-compose up -d
+docker-compose -f docker-compose-dev.yml up --build -d
 ```
+
+A aplicação ficará disponivel na porta 4000 (http://localhost:4000)
 
 Execute o comando
 
 ```bash
-docker exec node_desafio_igma npm run test
+docker exec node_desafio_igma_test npm run test
 ```
 
 Caso queira parar o container basta utilizar o comando
 
 ```bash
-  docker-compose down
+  docker-compose -f docker-compose-dev.yml down
 ```
 
 </br>
